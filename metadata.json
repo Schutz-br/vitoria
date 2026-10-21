@@ -1,0 +1,8 @@
+{
+  "name": "Remix Vitória \u0026 Kauã — Convite de Casamento Digital \u0026 RSVP",
+  "description": "Site de convite de casamento digital mobile-first de Vitória \u0026 Kauã com envelope animado, RSVP, painel dos noivos, álbum por QR Code e manual dos padrinhos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

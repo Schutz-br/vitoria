@@ -31,6 +31,8 @@ export interface WeddingData {
   pixType: string;
   pixRecipient: string;
   pixBank: string;
+  closingVerse?: string;
+  verseReference?: string;
 }
 
 export interface PhotoItem {

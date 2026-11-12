@@ -3,9 +3,15 @@ import { Volume2, VolumeX, Music, Play, Pause } from 'lucide-react';
 
 interface AudioPlayerProps {
   autoPlayTrigger?: boolean;
+  isPlayingExternal?: boolean;
+  onTogglePlayExternal?: () => void;
 }
 
-export const AudioPlayer: React.FC<AudioPlayerProps> = ({ autoPlayTrigger }) => {
+export const AudioPlayer: React.FC<AudioPlayerProps> = ({
+  autoPlayTrigger,
+  isPlayingExternal,
+  onTogglePlayExternal
+}) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [volume, setVolume] = useState<number>(0.5);
@@ -132,6 +138,16 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ autoPlayTrigger }) => 
       startMusic();
     }
   }, [autoPlayTrigger]);
+
+  useEffect(() => {
+    if (isPlayingExternal !== undefined) {
+      if (isPlayingExternal && !isPlaying) {
+        startMusic();
+      } else if (!isPlayingExternal && isPlaying) {
+        pauseMusic();
+      }
+    }
+  }, [isPlayingExternal]);
 
   useEffect(() => {
     return () => {

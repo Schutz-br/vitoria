@@ -38,7 +38,7 @@ export const GiftsPixModal: React.FC<GiftsPixModalProps> = ({ isOpen, onClose })
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 bg-[#f8f5ee] border-b border-[#e5d9cc] shrink-0">
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-[#3e533e] text-white">
+            <div className="p-2 rounded-lg bg-[#7a5999] text-white">
               <Gift className="w-4 h-4" />
             </div>
             <div>

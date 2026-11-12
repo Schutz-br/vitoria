@@ -23,7 +23,9 @@ export const WEDDING_EVENT: WeddingData = {
   pixKey: 'vitoriaekaua2027@gmail.com',
   pixType: 'E-mail',
   pixRecipient: 'Vitória & Kauã',
-  pixBank: 'NuBank'
+  pixBank: 'NuBank',
+  closingVerse: 'Porque aonde quer que tu fores irei eu, e onde quer que pousares, ali pousarei eu.',
+  verseReference: 'Rute 1:16b'
 };
 
 const STORAGE_KEY = 'vk_wedding_rsvp_list_v1';

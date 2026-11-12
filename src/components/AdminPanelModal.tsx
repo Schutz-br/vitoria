@@ -153,7 +153,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({ isOpen, onClos
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 bg-[#f8f5ee] border-b border-[#e5d9cc] shrink-0">
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-[#3e533e] text-white">
+            <div className="p-2 rounded-lg bg-[#7a5999] text-white">
               <Users className="w-4 h-4" />
             </div>
             <div>
@@ -204,7 +204,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({ isOpen, onClos
 
               <button
                 type="submit"
-                className="w-full py-3 px-4 rounded-xl bg-[#3e533e] hover:bg-[#324532] text-white text-xs font-semibold uppercase tracking-wider transition-all"
+                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#7a5999] to-[#654385] hover:from-[#6c4c87] hover:to-[#583975] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-md"
               >
                 Entrar no Painel
               </button>
@@ -219,14 +219,14 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({ isOpen, onClos
           <div className="flex-1 overflow-y-auto p-6 space-y-6">
             {/* Metric KPI Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <div className="p-4 rounded-xl bg-[#f2f7f2] border border-[#d2e3d2]">
-                <span className="text-[11px] uppercase tracking-wider text-[#456b45] font-semibold block">
+              <div className="p-4 rounded-xl bg-[#f7f0fc] border border-[#e1d0f0]">
+                <span className="text-[11px] uppercase tracking-wider text-[#6c488e] font-semibold block">
                   Confirmados
                 </span>
-                <span className="font-serif-cormorant text-3xl font-bold text-[#2a4d2a] tabular-nums">
+                <span className="font-serif-cormorant text-3xl font-bold text-[#452763] tabular-nums">
                   {summary.totalConfirmedPeople}
                 </span>
-                <span className="text-[11px] text-[#557b55] block mt-0.5">
+                <span className="text-[11px] text-[#78519c] block mt-0.5">
                   em {summary.attendingCount} respostas
                 </span>
               </div>
@@ -276,7 +276,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({ isOpen, onClos
               </div>
               <div className="w-full h-3 rounded-full bg-[#e8dece] overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#819e81] to-[#3e533e] transition-all duration-500 rounded-full"
+                  className="h-full bg-gradient-to-r from-[#b595d6] via-[#8962ab] to-[#6a428e] transition-all duration-500 rounded-full"
                   style={{ width: `${summary.percentage}%` }}
                 />
               </div>
@@ -297,14 +297,14 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({ isOpen, onClos
                   onClick={handleCopySummaryWhatsApp}
                   className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#f4eee4] hover:bg-[#eae1d3] text-[#473a2e] text-xs font-medium transition-colors border border-[#d9ccbd]"
                 >
-                  {copiedSummary ? <Check className="w-3.5 h-3.5 text-[#3e533e]" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copiedSummary ? <Check className="w-3.5 h-3.5 text-[#6c488e]" /> : <Copy className="w-3.5 h-3.5" />}
                   <span>{copiedSummary ? 'Copiado!' : 'Copiar Resumo'}</span>
                 </button>
               </div>
 
               <button
                 onClick={() => setShowAddForm(!showAddForm)}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#3e533e] hover:bg-[#324532] text-white text-xs font-medium transition-all shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-[#7a5999] to-[#654385] hover:from-[#6c4c87] hover:to-[#583975] text-white text-xs font-semibold transition-all shadow-sm"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>{showAddForm ? 'Fechar Formulário' : 'Adicionar Convidado'}</span>
@@ -362,7 +362,7 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({ isOpen, onClos
                   </label>
                   <button
                     type="submit"
-                    className="px-4 py-2 rounded-lg bg-[#3e533e] text-white text-xs font-semibold hover:bg-[#324532]"
+                    className="px-4 py-2 rounded-lg bg-gradient-to-r from-[#7a5999] to-[#654385] text-white text-xs font-semibold hover:from-[#6c4c87] hover:to-[#583975]"
                   >
                     Salvar Convidado
                   </button>

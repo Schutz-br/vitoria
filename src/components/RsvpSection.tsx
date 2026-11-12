@@ -345,7 +345,7 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ onRsvpSubmitted }) => 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 px-6 rounded-xl bg-[#3e533e] hover:bg-[#324532] text-white text-xs sm:text-sm font-medium tracking-wider uppercase transition-all shadow-md active:scale-[0.99] flex items-center justify-center gap-2"
+              className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#7a5999] via-[#654385] to-[#7a5999] hover:from-[#6c4c87] hover:to-[#583975] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all shadow-md active:scale-[0.99] flex items-center justify-center gap-2"
             >
               <Heart className="w-4 h-4 fill-white" />
               <span>{isSubmitting ? 'Registrando Presença...' : 'Confirmar Minha Presença'}</span>

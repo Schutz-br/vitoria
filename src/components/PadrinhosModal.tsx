@@ -36,8 +36,8 @@ export const PadrinhosModal: React.FC<PadrinhosModalProps> = ({ isOpen, onClose 
       `💍 Casamento: 11 de Julho de 2027 às 15h\n` +
       `📍 Local: Chalé Enfesta\n` +
       `⏰ *Chegada dos Padrinhos:* 14:15h pontual para fotos e alinhamento do cortejo!\n` +
-      `👗 Madrinhas: Vestido longo na paleta Verde Sálvia / Rosé / Terracota Suave.\n` +
-      `👔 Padrinhos: Terno elegante com a gravata oficial do kit dos noivos.\n` +
+      `👗 Madrinhas: Vestido longo na paleta Lavanda / Lilás Suave / Rosé / Champanhe.\n` +
+      `👔 Padrinhos: Terno elegante com gravata em tom suave e flor de lapela.\n` +
       `Acesse o manual completo no convite digital!`;
 
     navigator.clipboard.writeText(text);
@@ -46,10 +46,10 @@ export const PadrinhosModal: React.FC<PadrinhosModalProps> = ({ isOpen, onClose 
   };
 
   const madrinhasColors = [
-    { name: 'Verde Sálvia', hex: '#819e81', desc: 'Serenidade & elegância natural' },
-    { name: 'Rosé Suave', hex: '#d9a69b', desc: 'Romantismo e doçura delicada' },
-    { name: 'Champanhe Seda', hex: '#d8c2aa', desc: 'Luminosidade sofisticada' },
-    { name: 'Terracota Claro', hex: '#bf8470', desc: 'Calor e aconchego acolhedor' }
+    { name: 'Lavanda Floral', hex: '#9b7ec4', desc: 'Serenidade, requinte & perfume botânico' },
+    { name: 'Lilás Suave', hex: '#cbafd9', desc: 'Romantismo, delicadeza e encanto' },
+    { name: 'Rosé Pétala', hex: '#e2b3c2', desc: 'Doçura suave e afeto no altar' },
+    { name: 'Champanhe Seda', hex: '#e3d2be', desc: 'Luminosidade nobre e sofisticação' }
   ];
 
   return (
@@ -63,7 +63,7 @@ export const PadrinhosModal: React.FC<PadrinhosModalProps> = ({ isOpen, onClose 
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 bg-[#f8f5ee] border-b border-[#e5d9cc] shrink-0">
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-[#3e533e] text-white">
+            <div className="p-2 rounded-lg bg-[#7a5999] text-white">
               <Heart className="w-4 h-4 fill-white" />
             </div>
             <div>
@@ -114,7 +114,7 @@ export const PadrinhosModal: React.FC<PadrinhosModalProps> = ({ isOpen, onClose 
 
               <button
                 type="submit"
-                className="w-full py-3 px-4 rounded-xl bg-[#3e533e] hover:bg-[#324532] text-white text-xs font-semibold uppercase tracking-wider transition-all"
+                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#7a5999] to-[#654385] hover:from-[#6c4c87] hover:to-[#583975] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-md"
               >
                 Acessar Manual
               </button>

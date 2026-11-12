@@ -107,3 +107,10 @@ test('exportRSVPsToCSV outputs formatted CSV with correct columns', () => {
   assert.ok(csv.includes('Confirmado'));
   assert.ok(csv.includes('Vegana'));
 });
+
+test('WEDDING_EVENT contains requested closing verse and reference Rute 1:16b', async () => {
+  const { WEDDING_EVENT } = await import('./rsvp');
+  assert.ok(WEDDING_EVENT.closingVerse?.includes('Porque aonde quer que tu fores irei eu'));
+  assert.ok(WEDDING_EVENT.closingVerse?.includes('onde quer que pousares, ali pousarei eu'));
+  assert.equal(WEDDING_EVENT.verseReference, 'Rute 1:16b');
+});

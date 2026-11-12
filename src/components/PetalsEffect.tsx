@@ -9,8 +9,9 @@ export const PetalsEffect: React.FC = () => {
     const left = (i * 5.5 + (i % 3) * 2) % 96;
     const duration = 7 + (i % 6) * 1.5;
     const delay = (i * 0.7) % 8;
+    const colors = ['#e6d5f7', '#d3b8ee', '#f8e8f3', '#dfc7f5', '#ecdff8', '#c9aae6'];
+    const petalColor = colors[i % colors.length];
     const size = 12 + (i % 4) * 4;
-    const isBlush = i % 2 === 0;
 
     return {
       id: i,
@@ -19,8 +20,8 @@ export const PetalsEffect: React.FC = () => {
       animationDelay: `${delay}s`,
       width: `${size}px`,
       height: `${size * 0.75}px`,
-      color: isBlush ? '#f7d6cb' : '#fcedea',
-      opacity: 0.65 + (i % 3) * 0.1
+      color: petalColor,
+      opacity: 0.6 + (i % 4) * 0.1
     };
   });
 

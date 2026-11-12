@@ -38,18 +38,24 @@ export const EventDetails: React.FC = () => {
       </div>
 
       {/* Venue Card */}
-      <div className="bg-white/90 rounded-2xl overflow-hidden border border-[#e5d9ca] wedding-card-shadow">
-        {/* Venue Photo Replacement */}
-        <div className="relative h-56 sm:h-64 w-full bg-[#f6f1e8] border-b border-[#e5d9ca] flex flex-col items-center justify-center p-6 text-center">
-          <div className="w-14 h-14 rounded-full bg-[#eadecd] text-[#716152] flex items-center justify-center mb-3 shadow-inner">
-            <Camera className="w-6 h-6 text-[#8a725e]" />
+      <div className="bg-white/95 rounded-3xl overflow-hidden border border-[#decfe8] shadow-xl lavender-glow-shadow">
+        {/* Venue Altar Photo */}
+        <div className="relative h-64 sm:h-80 w-full overflow-hidden group">
+          <img
+            src="/assets/images/chale_enfesta_altar.jpeg"
+            alt="Altar da Cerimônia no Chalé Enfesta"
+            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2a1a36]/75 via-transparent to-transparent flex items-end p-6">
+            <div className="text-white">
+              <span className="text-xs uppercase tracking-widest text-[#eadbf7] font-semibold">
+                Espaço de Cerimônia & Recepção
+              </span>
+              <h3 className="font-serif-cormorant text-2xl sm:text-3xl font-bold">
+                {WEDDING_EVENT.venueName}
+              </h3>
+            </div>
           </div>
-          <h3 className="font-serif-cormorant text-3xl sm:text-4xl font-semibold text-[#2c382c] tracking-wide">
-            Fotos aqui
-          </h3>
-          <span className="text-xs uppercase tracking-widest text-[#7b6d5e] mt-2 font-medium">
-            Espaço de Cerimônia & Recepção · {WEDDING_EVENT.venueName}
-          </span>
         </div>
 
         {/* Address & Fast Navigation */}
@@ -85,7 +91,7 @@ export const EventDetails: React.FC = () => {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 p-3.5 rounded-xl bg-[#3e533e] hover:bg-[#324332] text-white text-xs sm:text-sm font-medium transition-all shadow-sm active:scale-[0.99]"
+              className="flex items-center justify-center gap-2 p-3.5 rounded-xl bg-gradient-to-r from-[#7a5999] via-[#654385] to-[#7a5999] hover:from-[#6c4c87] hover:to-[#583975] text-white text-xs sm:text-sm font-semibold tracking-wide transition-all shadow-md active:scale-[0.99]"
             >
               <Navigation className="w-4 h-4" />
               <span>Abrir no Google Maps</span>
@@ -95,9 +101,9 @@ export const EventDetails: React.FC = () => {
               href={wazeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 p-3.5 rounded-xl bg-white hover:bg-[#faf7f2] border border-[#d8c9b6] text-[#3e533e] text-xs sm:text-sm font-medium transition-all active:scale-[0.99]"
+              className="flex items-center justify-center gap-2 p-3.5 rounded-xl bg-white hover:bg-[#faf6fe] border border-[#d6c2ea] text-[#5c3e75] text-xs sm:text-sm font-semibold tracking-wide transition-all active:scale-[0.99] shadow-xs"
             >
-              <Car className="w-4 h-4 text-[#4f684f]" />
+              <Car className="w-4 h-4 text-[#8964a8]" />
               <span>Abrir no Waze</span>
             </a>
           </div>

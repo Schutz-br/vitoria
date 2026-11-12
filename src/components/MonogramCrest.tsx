@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface MonogramCrestProps {
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   showSubtitle?: boolean;
   className?: string;
+  useOfficialImage?: boolean;
 }
 
 export const MonogramCrest: React.FC<MonogramCrestProps> = ({
   size = 'md',
   showSubtitle = true,
-  className = ''
+  className = '',
+  useOfficialImage = true
 }) => {
+  const [imgError, setImgError] = useState(false);
+
   const sizeClasses = {
-    sm: 'w-20 h-20',
-    md: 'w-32 h-32',
-    lg: 'w-44 h-44',
-    xl: 'w-56 h-56'
+    xs: 'w-14 h-14',
+    sm: 'w-24 h-24',
+    md: 'w-36 h-36',
+    lg: 'w-52 h-52',
+    xl: 'w-64 h-64'
   };
 
   const fontSizeClasses = {
+    xs: 'text-xl',
     sm: 'text-2xl',
     md: 'text-4xl',
     lg: 'text-5xl',
@@ -28,13 +34,26 @@ export const MonogramCrest: React.FC<MonogramCrestProps> = ({
   return (
     <div className={`flex flex-col items-center justify-center text-center ${className}`}>
       <div className={`relative ${sizeClasses[size]} flex items-center justify-center select-none`}>
-        {/* Botanical circular wreath SVG */}
-        <svg
-          viewBox="0 0 200 200"
-          className="absolute inset-0 w-full h-full text-[#628262] transition-transform duration-700 hover:rotate-6"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        {useOfficialImage && !imgError ? (
+          <div className="relative w-full h-full rounded-full p-1.5 flex items-center justify-center group">
+            {/* Subtle lavender & gold halo */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#9b82b8]/20 via-[#e9ddf7]/40 to-[#d8c49d]/30 blur-xs" />
+            <img
+              src="/assets/images/vk_lavender_crest.jpeg"
+              alt="Monograma Oficial Vitória & Kauã com coroa floral de lavanda e lilás"
+              className="w-full h-full object-contain rounded-full relative z-10 transition-transform duration-700 group-hover:scale-105 drop-shadow-md"
+              onError={() => setImgError(true)}
+            />
+          </div>
+        ) : (
+          /* Botanical circular wreath SVG fallback */
+          <>
+            <svg
+              viewBox="0 0 200 200"
+              className="absolute inset-0 w-full h-full text-[#7d5f99] transition-transform duration-700 hover:rotate-6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
           {/* Outer delicate ring */}
           <circle
             cx="100"
@@ -129,7 +148,9 @@ export const MonogramCrest: React.FC<MonogramCrestProps> = ({
             K
           </span>
         </div>
-      </div>
+      </>
+    )}
+  </div>
 
       {showSubtitle && (
         <div className="mt-2 text-center">
